@@ -32,7 +32,12 @@ const resetVotes = () => {
   return (
     <div className={css.app}>
       <CafeInfo />
-      <VoteOptions onVote={handleVote} onReset={resetVotes} />
+     <VoteOptions
+  onVote={handleVote}
+  onReset={resetVotes}
+  canReset={true}
+/>
+
       <VoteStats votes={votes} />
 
     </div>
