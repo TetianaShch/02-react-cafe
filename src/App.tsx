@@ -29,6 +29,12 @@ const resetVotes = () => {
   });
 };
 
+  const totalVotes = votes.good + votes.neutral + votes.bad;
+
+  const positiveRate = totalVotes
+  ? Math.round((votes.good / totalVotes) * 100)
+    : 0;
+  
   return (
     <div className={css.app}>
       <CafeInfo />
@@ -38,7 +44,12 @@ const resetVotes = () => {
   canReset={true}
 />
 
-      <VoteStats votes={votes} />
+      <VoteStats
+  votes={votes}
+  totalVotes={totalVotes}
+  positiveRate={positiveRate}
+/>
+
 
     </div>
   );
