@@ -7,9 +7,11 @@ interface VoteStatsProps {
     positiveRate: number;
 }
 
-export default function VoteStats({ votes }: VoteStatsProps) {
-  const totalVotes = votes.good + votes.neutral + votes.bad;
-  const positiveRate = totalVotes ? Math.round((votes.good / totalVotes) * 100) : 0;
+export default function VoteStats({
+  votes,
+  totalVotes,
+  positiveRate,
+}: VoteStatsProps) {
 
   return (
     <div className={css.container}>
